@@ -1,0 +1,78 @@
+﻿@model NEWS.Models.Post
+@{            
+
+      Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/blog-home.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="row">
+        <div class="container">
+            <dl class="dl-horizontal">
+
+
+                <dd>
+                    <img class="img-thumbnail margintop" src="~/Uploads/@Model.Photo" />
+                </dd>
+
+                <dd class="bold">
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            @Html.DisplayFor(model => model.Title)
+                        </div>
+
+                    </div>
+                </dd>
+                <dd>
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            @Html.DisplayFor(model => model.Content)
+                        </div>
+
+                    </div>
+                </dd>
+                <dt>
+                    DATE:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Dateline)
+                </dd>
+
+            </dl>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <p>
+                    @Html.ActionLink("Back to List", "Index", "Home")
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
